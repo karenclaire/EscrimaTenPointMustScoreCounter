@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.android.escrimatenpointmustscorecounter.MainActivity">
+
+    <TextView
+        android:id="@+id/apptitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_team_top_bottom"
+        android:text="@string/header"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/score_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/apptitle"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/red_armor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_team_top_bottom"
+                android:layout_marginTop="@dimen/margin_team_top_bottom"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/padding_bottom_top"
+                android:paddingTop="@dimen/padding_bottom_top"
+                android:text="@string/red"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="@dimen/text_size_player"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/red_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/padding_bottom_top"
+                android:paddingTop="@dimen/padding_bottom_top"
+                android:text="@string/red_score"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="@dimen/player_score" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_score_and_sides"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_score_and_sides"
+                    android:layout_marginRight="@dimen/margin_between_buttons"
+                    android:layout_weight="1"
+                    android:onClick="foulDeductionRed"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/foul"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_between_buttons"
+                    android:layout_marginRight="@dimen/margin_score_and_sides"
+                    android:layout_weight="1"
+                    android:onClick="warningRed"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/warning"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_score_and_sides"
+                    android:layout_marginRight="@dimen/margin_between_buttons"
+                    android:layout_marginTop="@dimen/margin_between_buttons"
+                    android:layout_weight="1"
+                    android:onClick="disarmDeductionRed"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/disarm"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_between_buttons"
+                    android:layout_marginRight="@dimen/margin_score_and_sides"
+                    android:layout_marginTop="@dimen/margin_between_buttons"
+                    android:layout_weight="1"
+                    android:onClick="bonusRed"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/bonus"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_team_top_bottom"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/dividing_line" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/blue_armor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_team_top_bottom"
+                android:layout_marginTop="@dimen/margin_team_top_bottom"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/padding_bottom_top"
+                android:paddingTop="@dimen/padding_bottom_top"
+                android:text="@string/blue"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="#1A237E"
+                android:textSize="@dimen/text_size_player"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/blue_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/padding_bottom_top"
+                android:paddingTop="@dimen/padding_bottom_top"
+                android:text="@string/blue_score"
+                android:textAlignment="center"
+                android:textColor="#1A237E"
+                android:textSize="@dimen/player_score" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_score_and_sides"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_score_and_sides"
+                    android:layout_marginRight="@dimen/margin_between_buttons"
+                    android:layout_weight="1"
+                    android:onClick="foulDeductionBlue"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/foul"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#1A237E"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_between_buttons"
+                    android:layout_marginRight="@dimen/margin_score_and_sides"
+                    android:layout_weight="1"
+                    android:onClick="warningBlue"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/warning"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#1A237E"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/disarm_bonus_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_score_and_sides"
+                    android:layout_marginRight="@dimen/margin_between_buttons"
+                    android:layout_marginTop="@dimen/margin_between_buttons"
+                    android:layout_weight="1"
+                    android:onClick="disarmDeductionBlue"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/disarm"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#1A237E"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_between_buttons"
+                    android:layout_marginLeft="@dimen/margin_between_buttons"
+                    android:layout_marginRight="@dimen/margin_score_and_sides"
+                    android:layout_marginTop="@dimen/margin_between_buttons"
+                    android:layout_weight="1"
+                    android:onClick="bonusBlue"
+                    android:paddingBottom="@dimen/padding_bottom_top"
+                    android:paddingTop="@dimen/padding_bottom_top"
+                    android:text="@string/bonus"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#1A237E"
+                    android:textSize="@dimen/text_size_button"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/first_round_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="roundOneWinner"
+        android:layout_marginTop="@dimen/margin_between_buttons"
+        android:layout_marginBottom="@dimen/margin_between_buttons"
+        android:paddingBottom="@dimen/padding_bottom_top"
+        android:paddingTop="@dimen/padding_bottom_top"
+        android:text="@string/first_round_winner"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_player"
+        android:layout_below="@+id/score_block"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/first_round_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/first_round_red_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/round_score"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="@dimen/text_size_player"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/first_round_blue_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/round_score"
+            android:textAlignment="center"
+            android:textColor="#1A237E"
+            android:textSize="@dimen/text_size_player"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/second_round_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="roundTwoWinner"
+        android:paddingBottom="@dimen/padding_bottom_top"
+        android:paddingTop="@dimen/padding_bottom_top"
+        android:text="@string/second_round_winner"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_player"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignRight="@+id/first_round_button"
+        android:layout_alignEnd="@+id/first_round_button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/second_round_button"
+        android:id="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/second_round_red_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/round_score"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="@dimen/text_size_player"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/second_round_blue_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/round_score"
+            android:textAlignment="center"
+            android:textColor="#1A237E"
+            android:textSize="@dimen/text_size_player"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/round_three_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="roundThreeWinner"
+        android:paddingBottom="@dimen/padding_bottom_top"
+        android:paddingTop="@dimen/padding_bottom_top"
+        android:text="@string/third_round_winner"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_player"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/round_three_button"
+        android:id="@+id/linearLayout4">
+
+        <TextView
+            android:id="@+id/third_round_red_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/round_score"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="@dimen/text_size_player"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/third_round_blue_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/round_score"
+            android:textAlignment="center"
+            android:textColor="#1A237E"
+            android:textSize="@dimen/text_size_player"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/total_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout4"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/margin_winner_buttons"
+        android:layout_marginLeft="@dimen/margin_winner_buttons"
+        android:layout_marginRight="@dimen/margin_winner_buttons"
+        android:onClick="total"
+        android:paddingBottom="@dimen/padding_bottom_top"
+        android:paddingTop="@dimen/padding_bottom_top"
+        android:text="@string/total"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_player" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/margin_winner_buttons"
+        android:layout_marginLeft="@dimen/margin_winner_buttons"
+        android:layout_marginRight="@dimen/margin_winner_buttons"
+        android:onClick="reset"
+        android:paddingBottom="@dimen/padding_bottom_top"
+        android:paddingTop="@dimen/padding_bottom_top"
+        android:text="@string/reset"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_player" />
+
+
+</RelativeLayout>

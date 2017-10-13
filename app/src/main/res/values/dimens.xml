@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_bottom_top">4dp</dimen>
+    <dimen name="text_size_player">14sp</dimen>
+    <dimen name="player_score">48sp</dimen>
+    <dimen name="margin_between_buttons">4dp</dimen>
+    <dimen name="margin_winner_buttons">16dp</dimen>
+    <dimen name="margin_score_and_sides">24dp</dimen>
+    <dimen name="margin_team_top_bottom">16dp</dimen>
+    <dimen name="reset_bottom">32dp</dimen>
+    <dimen name="text_size_button">8sp</dimen>
+    <dimen name="header_size">24sp</dimen>
+</resources>

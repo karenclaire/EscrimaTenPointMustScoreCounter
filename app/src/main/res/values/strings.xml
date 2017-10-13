@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Escrima Ten Point Must Score Counter</string>
+    <string name="red">Red Armor</string>
+    <string name="red_score">10</string>
+    <string name="foul">Foul</string>
+    <string name="warning">Warning</string>
+    <string name="disarm">Disarm</string>
+    <string name="bonus">Bonus</string>
+    <string name="blue">Blue Armor</string>
+    <string name="blue_score">10</string>
+    <string name="first_round_winner">1st Round</string>
+    <string name="second_round_winner">2nd Round</string>
+    <string name="third_round_winner">3rd Round</string>
+    <string name="round_score">0</string>
+    <string name="total">Total</string>
+    <string name="header">Arnis / Escrima Score System</string>
+    <string name="reset">Reset</string>
+</resources>
